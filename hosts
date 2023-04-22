@@ -1,0 +1,14 @@
+[local]
+192.168.1.107
+[local:vars]
+ansible_ssh_user="liushiju"
+ansible_ssh_pass="liu888"
+
+[k8s]
+192.168.0.200
+192.168.0.201
+192.168.0.202
+[k8s:vars]
+ansible_ssh_user="root"
+ansible_ssh_pass="666666"
+

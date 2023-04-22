@@ -1,0 +1,7 @@
+---
+- hosts: k8s
+  gather_facts: false
+  vars:
+   check_report_path: /tmp
+  roles:
+   - os-check
