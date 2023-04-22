@@ -62,14 +62,14 @@ https://github.com/liushiju/Ansible-HealthCheck/tree/master/os-check
 
 ### 统计的系统资源
 
-- Hostname
-- Main IP
-- OS
-- CPU Used
-- CPU LoadAvg
-- Mem Used
-- Swap Used
-- Disk Size Used
-- Disk Inode Used
-- Tcp Connection Used
-- Timestamp
+- 主机名
+- IP地址
+- 操作系统
+- CPU使用率
+- CPU平均负载
+- 内存使用率
+- Swap使用率
+- 磁盘使用率
+- 磁盘Inode使用率
+- Tcp连接
+- 时间
