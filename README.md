@@ -73,3 +73,44 @@ https://github.com/liushiju/Ansible-HealthCheck/tree/master/os-check
 - 磁盘Inode使用率
 - Tcp连接
 - 时间
+
+### 执行巡检
+
+- 生成报告
+
+```bash
+# ansible-playbook roles/os-check.yaml
+PLAY [k8s] **********************************************************************************
+
+TASK [os-check : Get system check data.] ****************************************************
+changed: [192.168.0.200]
+changed: [192.168.0.202]
+changed: [192.168.0.201]
+
+TASK [os-check : Generate report file.] *****************************************************
+changed: [192.168.0.200]
+
+TASK [os-check : Get report file content.] **************************************************
+ok: [192.168.0.200]
+
+TASK [os-check : Send a report by email.] ***************************************************
+skipping: [192.168.0.200]
+
+PLAY RECAP **********************************************************************************
+192.168.0.200              : ok=3    changed=2    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0   
+192.168.0.201              : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+192.168.0.202              : ok=1    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
+```
+
+- 查看报告
+
+```bash
+cd /tmp
+report-2023-04-22.html
+
+# 通过浏览器打开查看
+python -m SimpleHTTPServer 80
+```
+
+- 网页查看
+![result](images/result.png)
